@@ -1,12 +1,14 @@
 ChartBase = require("controllers/chart_base")
 # 各行业消费总额占比分析
+# pie chart children: [10]
 class Chart2 extends ChartBase
 	opts:
 		category: ['酒店住宿','教育培训','医疗保健','生活便利','老字号','家居建材','购物逛街','汽车服务','金融证券','买房租房','其他']
 		percent: [1,1,2,6,6,7,8,9,15,22,23]
+		colors: ["#DE2A23","#FDD000","#B5C600","#0099A9"]
 	render: ->
 		@html require("views/chart2")(@opts)
-	getOptions: (data) ->
+	formatData: (data) ->
 		data = $.extend {},@opts,data
 		if $.type(data.category) is "string"
 			data.category = data.category.split(";")
@@ -14,10 +16,12 @@ class Chart2 extends ChartBase
 			str = data.percent.replace(/%/g,'')
 			data.percent = $.map str.split(";"), (d) ->
 				Number(d)
-		ar = []
+		data.ar = []
 		for d,i in data.category
-			ar.push [d,data.percent[i]]
-
+			data.ar.push [d,data.percent[i]]
+		data
+	getOptions: (data) ->
+		data = @formatData(data)
 		params =
 			credits:
 				enabled: false
@@ -36,9 +40,10 @@ class Chart2 extends ChartBase
 					allowPointSelect: true
 					cursor: 'pointer'
 					borderWidth: 2
-					# startAngle: -60
-					colors: ["#c0392b","#f1c40f","#27ae60","#3498db","#1abc9c"]
+					startAngle: 0
+					colors: data.colors
 					dataLabels:
+						softConnector: false
 						enabled: true
 						color: '#333'
 						connectorColor: '#666'
@@ -46,7 +51,7 @@ class Chart2 extends ChartBase
 			series: [
 				type: 'pie'
 				# innerSize: '30%'
-				data: ar
+				data: data.ar
 			]
 
 module.exports = Chart2

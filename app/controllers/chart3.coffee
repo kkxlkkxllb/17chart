@@ -6,6 +6,8 @@ class Chart3 extends ChartBase
 		h_label: '月份'
 		v_ser: [391, 393, 411, 419, 428, 436]
 		v_label: '银行卡总量（万张）'
+		color: '#DE2A23'
+		fillColor: "#FDD000"
 	getOptions: (data) ->
 		data = @formatData(data)
 		params =
@@ -21,10 +23,13 @@ class Chart3 extends ChartBase
 				enabled: false
 			xAxis:
 				categories: data.h_ser
-				# type: 'datetime'
+				lineColor: "#888"
+				lineWidth: 2
 				gridLineDashStyle: 'longdash'
+				gridLineColor: "#ddd"
 				gridLineWidth: 1
-				# startOnTick: true
+				labels:
+					y: 20
 				title:
 					text: data.h_label
 					align: "high"
@@ -38,25 +43,36 @@ class Chart3 extends ChartBase
 				# 	year: '%Y'
 			yAxis:
 				maxPadding: 0.25
+				minorTickInterval: 0.2
 				type: 'logarithmic'
+				gridLineDashStyle: 'longdash'
+				gridLineColor: "#ddd"
+				lineColor: "#888"
+				lineWidth: 2
 				title:
 					text: data.v_label
 					align: "high"
 					rotation: 0
 					y: -15
 					offset: 0
-				gridLineDashStyle: 'longdash'
+
 			plotOptions:
 				area:
 					lineColor: "#fff"
+					fillColor: data.fillColor
 					dataLabels:
 						enabled: true
-						color: 'red'
-						y: -5
+						color: data.color
+						y: -15
+						formatter: ->
+							if data.percent
+								this.y + "%"
+							else
+								this.y
 					marker:
 						lineWidth: 2
-						radius: 6
-						fillColor: "red"
+						radius: 8
+						fillColor: data.color
 			series: [
 				data: data.v_ser
 			]

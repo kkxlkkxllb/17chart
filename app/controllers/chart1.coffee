@@ -26,13 +26,17 @@ class Chart1 extends ChartBase
 			chart:
 				type: 'column'
 			title:
-				text: '--'
+				text: '-'
 			tooltip:
 				enabled: false
 			legend:
 				enabled: false
 			xAxis:
 				categories: data.h_ser
+				lineColor: "#888"
+				lineWidth: 2
+				labels:
+					y: 20
 				title:
 					text: data.h_label
 					align: "high"
@@ -40,6 +44,9 @@ class Chart1 extends ChartBase
 			yAxis:
 				min: 0
 				gridLineDashStyle: 'longdash'
+				gridLineColor: "#ddd"
+				lineColor: "#888"
+				lineWidth: 2
 				title:
 					text: data.v_label
 					align: "high"
@@ -50,12 +57,16 @@ class Chart1 extends ChartBase
 			plotOptions:
 				column:
 					# borderRadius: 10
+					# borderRadiusTopLeft: 30
+					# borderRadiusTopRight: 30
 					# arrowTop: true
 					# pointPadding: -0.3
 					# groupPadding: 0.2
 					# borderWidth: 0
+					color: "#DE2A23"
 					dataLabels:
 						enabled: true
+						y: -15
 			series: [
 				data: data.v_ser
 			]

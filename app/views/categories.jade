@@ -1,37 +1,22 @@
 .container
-	#chart_categories
-		table.sample.table
-			tr
-				td.c1
-					a(href="#chart/1")
-						img(src="/assets/images/c1.png")
-				td.c2
-					a(href="#chart/2")
-						img(src="/assets/images/c2.png")
-			tr
-				td.c3
-					a(href="#chart/3")
-						img(src="/assets/images/c3.png")
-				td.c4
-					a(href="#chart/4")
-						img(src="/assets/images/c4.png")
-			tr
-				td.c5
-					a(href="#chart/5")
-						img(src="/assets/images/c5.png")
-				td.c6
-					a(href="#chart/6")
-						img(src="/assets/images/c6.png")
-			tr
-				td.c7
-					a(href="#chart/7")
-						img(src="/assets/images/c7.png")
-				td.c8
-					a(href="#chart/8")
-						img(src="/assets/images/c8.png")
-			tr
-				td.c17
-					a(href="#chart/17")
-						img(src="/assets/images/c17.png")
-				td
+	#chart_categories.clearfix
+		each item,i in collection
+			if (i + 1)%2 === 0
+				.row
+					.col-md-6
+						.panel.panel-primary
+							.panel-heading
+								h3.panel-title= "" + (i + 1) + "、" + item.name
+							.panel-body
+								a(href="#chart/#{item.id}")
+									img(src="/assets/images/c#{item.id}.png")
+			else
+				.col-md-6
+					.panel.panel-primary
+						.panel-heading
+							h3.panel-title= "" + (i + 1) + "、" + item.name
+						.panel-body
+							a(href="#chart/#{item.id}")
+								img(src="/assets/images/c#{item.id}.png")
+
 

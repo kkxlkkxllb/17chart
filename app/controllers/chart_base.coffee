@@ -1,9 +1,10 @@
 class ChartBase extends Spine.Controller
+	className: "container"
 	events:
 		"submit form": "submit"
 	constructor: ->
 		super
-		@render()
+		$("article").html @render()
 		$('#chart').highcharts @getOptions()
 	submit: (e) ->
 		e.preventDefault()

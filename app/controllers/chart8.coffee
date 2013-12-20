@@ -1,16 +1,15 @@
 ChartBase = require("controllers/chart1")
-# 月消费金额占比走势分析
+# 月均客单价波动分析
 class Chart8 extends ChartBase
 	opts:
 		h_ser: ['5月','6月','7月','8月','9月','10月']
 		h_label: '月份'
 		v_ser: [594.8,579.4,522.3,677.9,679.6,775.2]
 		v_label: '客单价（元/笔）'
+		color: "#2EA7E0"
 	getOptions: (data) ->
 		data = @formatData(data)
 		params =
-			# chart:
-			# 	type: 'area'
 			credits:
 				enabled: false
 			title:
@@ -21,13 +20,16 @@ class Chart8 extends ChartBase
 				enabled: false
 			xAxis:
 				categories: data.h_ser
-				# type: 'datetime'
 				gridLineDashStyle: 'longdash'
 				gridLineWidth: 1
-				# startOnTick: true
+				gridLineColor: "#ddd"
+				lineColor: "#888"
+				lineWidth: 2
 				title:
 					text: data.h_label
 					align: "high"
+				labels:
+					y: 20
 				# dateTimeLabelFormats:
 				# 	second: '%H:%M:%S'
 				# 	minute: '%H:%M'
@@ -38,8 +40,11 @@ class Chart8 extends ChartBase
 				# 	year: '%Y'
 			yAxis:
 				maxPadding: 0.25
-				minorTickInterval: 0.2
+				minorTickInterval: 5
 				type: 'logarithmic'
+				gridLineColor: "#ddd"
+				lineColor: "#888"
+				lineWidth: 2
 				title:
 					text: data.v_label
 					align: "high"
@@ -49,15 +54,16 @@ class Chart8 extends ChartBase
 				gridLineDashStyle: 'longdash'
 			plotOptions:
 				line:
-					lineColor: "blue"
+					lineColor: data.color
 					dataLabels:
 						enabled: true
-						y: -5
+						y: -15
+						color: data.color
 					marker:
 						lineWidth: 2
 						radius: 6
 						fillColor: "#fff"
-						lineColor: "blue"
+						lineColor: data.color
 			series: [
 				data: data.v_ser
 			]

@@ -1,20 +1,19 @@
-.container
-	#chart
-	#form
-		form(action="#" method="post" role="form")
-			.col-lg-6
-				.input-group
-					span.input-group-addon 横坐标
-					input.form-control(type="text" name="h_ser")
-				.input-group
-					span.input-group-addon 纵坐标
-					input.form-control(type="text" name="v_ser")
-			.col-lg-6
-				.input-group
-					span.input-group-addon 横坐标标签
-					input.form-control(type="text" name="h_label" value=h_label)
-				.input-group
-					span.input-group-addon 纵坐标标签
-					input.form-control(type="text" name="v_label" value=v_label)
-			.col-lg-6
-				input.btn.btn-primary(type="submit")
+#chart
+#form
+	form(action="#" method="post" role="form")
+		.col-lg-6
+			.input-group
+				span.input-group-addon 横坐标
+				input.form-control(type="text" name="h_ser" required="required")
+			.input-group
+				span.input-group-addon 纵坐标
+				input.form-control(type="text" name="v_ser" required="required")
+		.col-lg-6
+			.input-group
+				span.input-group-addon 横坐标标签
+				input.form-control(type="text" name="h_label" value=h_label)
+			.input-group
+				span.input-group-addon 纵坐标标签
+				input.form-control(type="text" name="v_label" value=v_label)
+		.col-lg-6
+			input.btn.btn-primary(type="submit")

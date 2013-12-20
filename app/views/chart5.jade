@@ -1,29 +1,28 @@
-.container
-	#chart
-	#form
-		form(action="#" method="post" role="form")
-			.col-lg-6
-				.input-group
-					span.input-group-addon 横坐标
-					input.form-control(type="text" name="h_ser")
-				.input-group
-					span.input-group-addon 纵坐标1
-					input.form-control(type="text" name="v_ser1")
-				.input-group
-					span.input-group-addon 纵坐标2
-					input.form-control(type="text" name="v_ser2")
-				.input-group
-					span.input-group-addon 纵坐标标签
-					input.form-control(type="text" name="v_label" value=v_label)
-			.col-lg-6
-				.input-group
-					span.input-group-addon 横坐标标签
-					input.form-control(type="text" name="h_label" value='月份')
-				.input-group
-					span.input-group-addon 1值标签
-					input.form-control(type="text" name="c1_label" value=c1_label)
-				.input-group
-					span.input-group-addon 2值标签
-					input.form-control(type="text" name="c2_label" value=c2_label)
-				.input-group
-					input.btn.btn-primary(type="submit")
+#chart
+#form
+	form(action="#" method="post" role="form")
+		.col-lg-6
+			.input-group
+				span.input-group-addon 横坐标
+				input.form-control(type="text" name="h_ser" required="required")
+			.input-group
+				span.input-group-addon 纵坐标1
+				input.form-control(type="text" name="v_ser1" required="required")
+			.input-group
+				span.input-group-addon 纵坐标2
+				input.form-control(type="text" name="v_ser2" required="required")
+			.input-group
+				span.input-group-addon 纵坐标标签
+				input.form-control(type="text" name="v_label" value=v_label)
+		.col-lg-6
+			.input-group
+				span.input-group-addon 横坐标标签
+				input.form-control(type="text" name="h_label" value='月份')
+			.input-group
+				span.input-group-addon 1值标签
+				input.form-control(type="text" name="c1_label" value=c1_label)
+			.input-group
+				span.input-group-addon 2值标签
+				input.form-control(type="text" name="c2_label" value=c2_label)
+			.input-group
+				input.btn.btn-primary(type="submit")
