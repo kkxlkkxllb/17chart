@@ -5,7 +5,7 @@ mixin panel(item,i)
 				h3.panel-title= "" + (i + 1) + "、" + item.name
 			.panel-body
 				a(href="#chart/#{item.id}")
-					img(src="/assets/images/c#{item.id}.png")
+					img(src="./assets/images/c#{item.id}.png")
 .container
 	#chart_categories
 		each item,i in collection
