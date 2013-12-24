@@ -6,7 +6,7 @@ class Chart11 extends ChartBase
 		h_label: '消费区间（元）'
 		v_ser: [72962,24966,12031,6776,4196,2916,1978,1470,1091,880,6995]
 		v_label: '消费人数'
-		colors: ["#5CB539","#5CB539","#5CB539","#5CB539","#5CB539","#5CB539","#5CB539","#5CB539","#5CB539","#5CB539","#507205"]
+		colors: ["#5CB539","#507205"]
 		labelColor: '#5CB539'
 
 module.exports = Chart11

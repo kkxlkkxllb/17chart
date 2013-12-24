@@ -8,4 +8,4 @@ require('spine/lib/manager')
 require('spine/lib/route')
 
 require("lib/chart/highchart")
-require("lib/chart/rounded-corners")
+require("lib/bootstrap.min")

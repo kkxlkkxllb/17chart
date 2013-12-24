@@ -1,22 +1,16 @@
+mixin panel(item,i)
+	.col-md-6
+		.panel.panel-primary
+			.panel-heading
+				h3.panel-title= "" + (i + 1) + "、" + item.name
+			.panel-body
+				a(href="#chart/#{item.id}")
+					img(src="/assets/images/c#{item.id}.png")
 .container
-	#chart_categories.clearfix
+	#chart_categories
 		each item,i in collection
-			if (i + 1)%2 === 0
-				.row
-					.col-md-6
-						.panel.panel-primary
-							.panel-heading
-								h3.panel-title= "" + (i + 1) + "、" + item.name
-							.panel-body
-								a(href="#chart/#{item.id}")
-									img(src="/assets/images/c#{item.id}.png")
-			else
-				.col-md-6
-					.panel.panel-primary
-						.panel-heading
-							h3.panel-title= "" + (i + 1) + "、" + item.name
-						.panel-body
-							a(href="#chart/#{item.id}")
-								img(src="/assets/images/c#{item.id}.png")
-
+			+panel(item,i)
+			if i%2 === 1
+				.clearfix
+		.clearfix
 

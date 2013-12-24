@@ -32,7 +32,7 @@ class Chart2 extends ChartBase
 			exporting:
 				enabled: true
 			title:
-				text: ''
+				text: ' '
 			tooltip:
 				enabled: false
 			plotOptions:

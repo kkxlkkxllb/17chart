@@ -1,0 +1,28 @@
+.row
+	#chart1.col-md-4
+	#chart2.col-md-4
+	#chart3.col-md-4
+#form
+	form(action="#" method="post" role="form")
+		.col-lg-6
+			.input-group
+				span.input-group-addon 月份
+				input.form-control(type="text" name="month" required="required")
+			.input-group
+				span.input-group-addon 纵坐标1
+				input.form-control(type="text" name="v_ser1" required="required")
+			.input-group
+				span.input-group-addon 纵坐标2
+				input.form-control(type="text" name="v_ser2" required="required")
+		.col-lg-6
+			//- .input-group
+			//- 	span.input-group-addon 比例
+			//- 	input.form-control(type="text" name="percent" value=percent)
+			.input-group
+				span.input-group-addon 纵坐标1标签
+				input.form-control(type="text" name="c1_label" value=c1_label)
+			.input-group
+				span.input-group-addon 纵坐标2标签
+				input.form-control(type="text" name="c2_label" value=c2_label)
+			.input-group
+				input.btn.btn-primary(type="submit")

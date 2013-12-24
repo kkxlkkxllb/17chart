@@ -8,4 +8,4 @@ module.exports = class Chart14 extends ChartBase
 		v_label: '消费人数'
 		max: 6000
 		labelColor: '#EA5514'
-		colors: ["#FF9016","#FF9016","#FF9016","#FF9016","#FF9016","#FF9016","#FF9016","#FF9016","#FF9016","#FF9016","#EA5514"]
+		colors: ["#FF9016","#EA5514"]

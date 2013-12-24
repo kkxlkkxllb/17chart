@@ -23,7 +23,7 @@ class Chart17 extends ChartBase
 				width: 800
 				type: 'column'
 			title:
-				text: '--'
+				text: ' '
 			tooltip:
 				enabled: false
 			legend:
@@ -38,9 +38,10 @@ class Chart17 extends ChartBase
 					y: 20
 			yAxis:
 				min: 0
-				gridLineDashStyle: 'longdash'
+				# gridLineDashStyle: 'longdash'
+				gridLineWidth: 0
 				lineColor: "#888"
-				lineWidth: 2
+				lineWidth: 0
 				title:
 					text: data.v_label
 					align: "high"
@@ -52,7 +53,7 @@ class Chart17 extends ChartBase
 
 			plotOptions:
 				series:
-					pointWidth: 200
+					pointWidth: 220
 				column:
 					# borderRadius: 10
 					# arrowTop: true
@@ -66,7 +67,7 @@ class Chart17 extends ChartBase
 						align: 'center'
 						style:
 							fontWeight:'bold'
-							fontSize: '24px'
+							fontSize: '22px'
 						# backgroundColor: '#FFF'
 						y:40
 			series: [

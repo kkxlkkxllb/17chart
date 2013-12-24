@@ -12,14 +12,17 @@ class Chart8 extends ChartBase
 		params =
 			credits:
 				enabled: false
+			chart:
+				marginTop: 40
 			title:
-				text: "--"
+				text: " "
 			tooltip:
 				enabled: false
 			legend:
 				enabled: false
 			xAxis:
 				categories: data.h_ser
+				tickmarkPlacement: "on"
 				gridLineDashStyle: 'longdash'
 				gridLineWidth: 1
 				gridLineColor: "#ddd"
@@ -40,8 +43,9 @@ class Chart8 extends ChartBase
 				# 	year: '%Y'
 			yAxis:
 				maxPadding: 0.25
-				minorTickInterval: 5
-				type: 'logarithmic'
+				# minorTickInterval: 5
+				# type: 'logarithmic'
+				gridLineDashStyle: 'longdash'
 				gridLineColor: "#ddd"
 				lineColor: "#888"
 				lineWidth: 2
@@ -51,7 +55,7 @@ class Chart8 extends ChartBase
 					rotation: 0
 					y: -15
 					offset: 0
-				gridLineDashStyle: 'longdash'
+
 			plotOptions:
 				line:
 					lineColor: data.color
@@ -59,6 +63,8 @@ class Chart8 extends ChartBase
 						enabled: true
 						y: -15
 						color: data.color
+						style:
+							fontSize: '16px'
 					marker:
 						lineWidth: 2
 						radius: 6

@@ -8,17 +8,25 @@ class Chart4 extends ChartBase
 		v_ser: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6]
 		v_label: '刷卡次数'
 		labelColor: '#DE2A23'
-		colors: ["#DE2A23","#DE2A23","#DE2A23","#DE2A23","#DE2A23","#DE2A23","#DE2A23","#DE2A23","#DE2A23","#DE2A23","#9B1F23"]
+		colors: ["#DE2A23","#9B1F23"]
 	getOptions: (data) ->
 		data = @formatData(data)
+		len = data.h_ser.length - 1
+		if data.colors.length > 1
+			colors = []
+			for i in [1..len]
+				colors.push data.colors[0]
+			colors.push data.colors[1]
+		else
+			colors = data.colors
 		v =
-			colors: data.colors
+			colors: colors
 			chart:
 				type: 'bar'
 			credits:
 				enabled: false
 			title:
-				text: "-"
+				text: " "
 			tooltip:
 				enabled: false
 			legend:
@@ -30,10 +38,14 @@ class Chart4 extends ChartBase
 						enabled: true
 						color: data.labelColor
 						x: 15
+						y: -2
+						style:
+							fontSize: '16px'
 			xAxis:
 				categories: data.h_ser
 				lineColor: "#888"
 				lineWidth: 2
+				tickWidth: 0
 				title:
 					text: data.h_label
 					align: "high"

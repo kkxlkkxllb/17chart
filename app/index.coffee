@@ -32,9 +32,9 @@ class App extends Spine.Controller
 	,
 		id: 9
 		name: "每周交易额分析"
-	,
-		id: 10
-		name: "卡所属银行分析"
+	# ,
+	# 	id: 10
+	# 	name: "卡所属银行分析"
 	,
 		id: 11
 		name: "客户消费能力分析-1"
@@ -63,15 +63,18 @@ class App extends Spine.Controller
 		id: 17
 		name: "流失客户在同行业其他商户的月消费情况"
 	]
+	release: ->
+		@view.release() if @view
+		$("footer nav").html require("views/footer")(collection: @categories)
 	constructor: ->
 		@routes
 			"": ->
 				Spine.Route.navigate("/", true)
 			"/": ->
-				@view.release() if @view
+				@release()
 				$("article").html require("views/categories")(collection: @categories)
 			"chart/:id": (params) ->
-				@view.release() if @view
+				@release()
 				ChartDetail = require("controllers/chart#{params.id}")
 				@view = new ChartDetail()
 $ ->
@@ -85,3 +88,7 @@ $ ->
 			downloadSVG: "下载 svg 矢量图片"
 	new App()
 	Spine.Route.setup()
+	# $('footer').affix
+	# 	offset:
+	# 		top: 100
+	# 		bottom: 10

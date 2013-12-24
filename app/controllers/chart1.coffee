@@ -12,7 +12,8 @@ class Chart1 extends ChartBase
 		data = $.extend {},@opts,data
 		# convert
 		if $.type(data.h_ser) is "string"
-			data.h_ser = data.h_ser.split(";")
+			str = data.h_ser.replace(/；/g,';')
+			data.h_ser = str.split(";")
 		if $.type(data.v_ser) is "string"
 			str = data.v_ser.replace(/%/g,'')
 			data.v_ser = $.map str.split(";"),(d) ->
@@ -25,8 +26,9 @@ class Chart1 extends ChartBase
 				enabled: false
 			chart:
 				type: 'column'
+				marginTop: 40
 			title:
-				text: '-'
+				text: ' '
 			tooltip:
 				enabled: false
 			legend:
@@ -42,7 +44,7 @@ class Chart1 extends ChartBase
 					align: "high"
 					# offset: 0
 			yAxis:
-				min: 0
+				maxPadding: 0.2
 				gridLineDashStyle: 'longdash'
 				gridLineColor: "#ddd"
 				lineColor: "#888"
@@ -67,6 +69,9 @@ class Chart1 extends ChartBase
 					dataLabels:
 						enabled: true
 						y: -15
+						color: '#DE2A23'
+						style:
+							fontSize: '16px'
 			series: [
 				data: data.v_ser
 			]

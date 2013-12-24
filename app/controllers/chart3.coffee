@@ -10,19 +10,26 @@ class Chart3 extends ChartBase
 		fillColor: "#FDD000"
 	getOptions: (data) ->
 		data = @formatData(data)
+		dmin = Math.min data.v_ser...
+		dmax = Math.max data.v_ser...
+		ra = (dmax - dmin)/4
+		min = Math.max [dmin - ra, 0]...
+		max= dmax + ra
 		params =
 			chart:
 				type: 'area'
+				marginTop: 40
 			credits:
 				enabled: false
 			title:
-				text: "--"
+				text: " "
 			tooltip:
 				enabled: false
 			legend:
 				enabled: false
 			xAxis:
 				categories: data.h_ser
+				tickmarkPlacement: "on"
 				lineColor: "#888"
 				lineWidth: 2
 				gridLineDashStyle: 'longdash'
@@ -43,8 +50,10 @@ class Chart3 extends ChartBase
 				# 	year: '%Y'
 			yAxis:
 				maxPadding: 0.25
-				minorTickInterval: 0.2
-				type: 'logarithmic'
+				minorTickInterval: data.tick || null
+				type: data.type || null
+				min: min
+				max: max
 				gridLineDashStyle: 'longdash'
 				gridLineColor: "#ddd"
 				lineColor: "#888"
@@ -69,6 +78,8 @@ class Chart3 extends ChartBase
 								this.y + "%"
 							else
 								this.y
+						style:
+							fontSize: '16px'
 					marker:
 						lineWidth: 2
 						radius: 8
