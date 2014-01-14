@@ -1,0 +1,24 @@
+#chart
+#form
+	form.row(action="#" method="post" role="form")
+		.col-lg-6
+			.input-group
+				span.input-group-addon x坐标
+				input.form-control(type="text" name="h_ser" required="required")
+			.input-group
+				span.input-group-addon y坐标
+				input.form-control(type="text" name="v_ser" required="required")
+			.input-group
+				span.input-group-addon z坐标
+				input.form-control(type="text" name="z_ser" required="required")
+			.input-group
+				span.input-group-addon 横坐标标签
+				input.form-control(type="text" name="h_label" value=h_label)
+			.input-group
+				span.input-group-addon 纵坐标标签
+				input.form-control(type="text" name="v_label" value=v_label)
+			.input-group
+				span.input-group-addon z坐标标签
+				input.form-control(type="text" name="z_label" value=z_label)
+			.input-group
+				input.btn.btn-primary(type="submit")

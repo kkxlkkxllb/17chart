@@ -36,18 +36,22 @@ class Chart17 extends ChartBase
 					# offset: 0
 				labels:
 					y: 20
+					style:
+						fontSize: '20px'
 			yAxis:
-				min: 0
+				# min: 0
 				# gridLineDashStyle: 'longdash'
+				maxPadding: 0.1
 				gridLineWidth: 0
 				lineColor: "#888"
-				lineWidth: 0
+				lineWidth: 3
 				title:
 					text: data.v_label
 					align: "high"
 					rotation: 0
-					y: -15
-					offset: 0
+					y: 0
+					offset: 5
+					enabled:true
 				labels:
 					enabled: false
 
@@ -60,6 +64,7 @@ class Chart17 extends ChartBase
 					# pointPadding: -0.3
 					# groupPadding: 0.2
 					# borderWidth: 0
+
 					borderWidth: 4
 					dataLabels:
 						enabled: true

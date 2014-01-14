@@ -8,4 +8,6 @@ require('spine/lib/manager')
 require('spine/lib/route')
 
 require("lib/chart/highchart")
+require("lib/chart/highchart_export")
+require("lib/chart/highcharts-more")
 require("lib/bootstrap.min")

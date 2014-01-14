@@ -14,6 +14,7 @@ class Chart8 extends ChartBase
 				enabled: false
 			chart:
 				marginTop: 40
+				# width: 800
 			title:
 				text: " "
 			tooltip:
@@ -64,7 +65,7 @@ class Chart8 extends ChartBase
 						y: -15
 						color: data.color
 						style:
-							fontSize: '16px'
+							fontSize: '14px'
 					marker:
 						lineWidth: 2
 						radius: 6

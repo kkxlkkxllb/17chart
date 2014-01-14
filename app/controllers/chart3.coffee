@@ -79,7 +79,7 @@ class Chart3 extends ChartBase
 							else
 								this.y
 						style:
-							fontSize: '16px'
+							fontSize: '14px'
 					marker:
 						lineWidth: 2
 						radius: 8

@@ -9,6 +9,8 @@ class Chart6 extends ChartBase
 		v_label: '每月客单价（元/笔）'
 		c1_label: '行业消费客单价'
 		c2_label: '商户消费客单价'
-		colors: ["#7B7A7B","#E0742D"]
+		colors: ["#7B7A7B","#EBAC28"]
+		# pointWidth: 40
+		groupPadding: 0.1
 
 module.exports = Chart6

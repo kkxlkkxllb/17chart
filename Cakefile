@@ -1,7 +1,6 @@
 {print} = require 'util'
 {spawn} = require 'child_process'
-node_path = '/home/jazz/dev/node-v0.10.13-linux-x64'
-jade = node_path + '/bin/jade'
+jade = 'jade'
 
 
 task 'jade:index', 'Build src/index.jade to public', ->

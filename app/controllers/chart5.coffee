@@ -27,7 +27,7 @@ class Chart5 extends ChartBase
 			data.v_ser2 = $.map data.v_ser2.split(";"),(d) ->
 				Number(d)
 		data
-	params: ->
+	params: (data) ->
 		data = @formatData(data)
 		lineData = []
 		for item,i in data.v_ser2
@@ -39,6 +39,7 @@ class Chart5 extends ChartBase
 				enabled: false
 			chart:
 				height: 600
+				width: 1000
 			title:
 				text: " "
 			tooltip:
@@ -53,6 +54,8 @@ class Chart5 extends ChartBase
 				borderWidth: 0
 				layout:'vertical'
 				align: 'right'
+				itemStyle:
+					fontSize: '14px'
 				verticalAlign: 'top'
 				y: 100
 			xAxis:
@@ -89,6 +92,7 @@ class Chart5 extends ChartBase
 						formatter: ->
 							Math.round(this.y/2e4)/10 + "%"
 				column:
+					groupPadding: 0.1
 					dataLabels:
 						enabled: true
 						y: -15
@@ -122,6 +126,7 @@ class Chart5 extends ChartBase
 			chart:
 				type: 'column'
 				marginTop: 40
+				width: 1000
 			credits:
 				enabled: false
 			title:
@@ -138,6 +143,8 @@ class Chart5 extends ChartBase
 				layout:'vertical'
 				align: 'right'
 				verticalAlign: 'middle'
+				itemStyle:
+					fontSize: '14px'
 			xAxis:
 				categories: data.h_ser
 				lineColor: "#888"
@@ -162,11 +169,13 @@ class Chart5 extends ChartBase
 					offset: 0
 			plotOptions:
 				column:
+					pointWidth: data.pointWidth || null
+					groupPadding: data.groupPadding || "0.2"
 					dataLabels:
 						enabled: true
 						y: -15
 						style:
-							fontSize: '14px'
+							fontSize: '12px'
 					#borderRadiusTopLeft: 30
 					#borderRadiusTopRight: 30
 					#borderRadius: 10
@@ -179,7 +188,7 @@ class Chart5 extends ChartBase
 				data: data.v_ser2
 			]
 		if @opts.custom
-			@params()
+			@params(data)
 		else
 			params
 module.exports = Chart5

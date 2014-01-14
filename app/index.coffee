@@ -62,10 +62,148 @@ class App extends Spine.Controller
 	,
 		id: 17
 		name: "流失客户在同行业其他商户的月消费情况"
+	,
+		id: 20
+		name: "月刷卡量分析"
+	,
+		id: 211
+		name: "各消费频次区间的刷卡量分析2-1"
+	,
+		id: 212
+		name: "各消费频次区间的刷卡量分析2-2"
+	,
+		id: 24
+		name: "月刷卡对比分析"
+	,
+		id: 25
+		name: "每月交易额分析"	
+	,
+		id: 26
+		name: "每月交易量分析"
+	,
+		id: 27
+		name: "每周交易量分析"	
+	,
+		id: 28
+		name: "周均客单价波动分析"	
+	,
+		id: 29
+		name: "日均交易金额分析"
+	,
+		id: 30
+		name: "日均交易量分析"
+	,
+		id: 32
+		name: "新、老客户客单价对比分析"
+	,
+		id: 33
+		name: "流失客户在同行业其他商户的月消费频次分析"
+	,
+		id: 34
+		name: "新客户与老客户中本地、外地客户对比分析2-1"
+	,
+		id: 35
+		name: "新客户与老客户中本地、外地客户对比分析2-2"
+	,
+		id: 36
+		name: "新客户与老客户中外地客户来源占比分析2-1"
+	,
+		id: 37
+		name: "新客户与老客户中外地客户来源占比分析2-2"
+	,
+		id: 38
+		name: "每月卡均消费额分析"
+	,
+		id: 39
+		name: "城市消费能力指数2-1"
+	,
+		id: 40
+		name: "城市消费能力指数2-2"
+	,
+		id: 411
+		name: "银行卡总量对比分析"
+	,
+		id: 42
+		name: "当月百货行业消费总额对比分析"        
+	,
+		id: 43
+		name: "日均客单价波动分析"
+	,
+		id: 44
+		name: "每季度交易额分析"
+	,
+		id: 45
+		name: "每季度交易量分析"
+	,
+		id: 46
+		name: "季均客单价波动分析"
+	,
+		id: 47
+		name: "本地客户消费占比分析"
+	,
+		id: 48
+		name: "沉默客户本地外地客户对比分析"
+	,
+		id: 49
+		name: "沉默客户购买频次2-1"
+	,
+		id: 50
+		name: "沉默客户购买频次2-2"
+	,
+		id: 51
+		name: "沉默客户在同行业其他商户的人均月刷卡量分析"
+	,
+		id: 52
+		name: "沉默客户在同行业其他商户的人均月消费金额分析"
+	,
+		id: 53
+		name: "沉默、老客户每月人均支出对比分析"
+	,
+		id: 54
+		name: "流失客户中本地、外地客户对比分析"
+	,
+		id: 55
+		name: "流失客户购买频次2-1"
+	,
+		id: 56
+		name: "流失客户购买频次2-2"
+	,
+		id: 57
+		name: "流失客户在同行业其他商户的每月人均月刷卡量分析"
+	,
+		id: 58
+		name: "流失客户在同行业其他商户的人均月消费金额分析"
+	,
+		id: 59
+		name: "流失、老客户每月人均消费支出对比分析"
+	,
+		id: 60
+		name: "月卡均消费金额"
+	,
+		id: 61
+		name: "沉默客户中外地客户来源占比分析"
+	,
+		id: 62
+		name: "流失客户中外的客户来源占比"
+	,
+		id: 63
+		name: "新老客户月消费金额对比分析"
+	,
+		id: 64
+		name: "新、老客户月刷卡量对比分析"
+	,	
+		id: 65
+		name: "人均月支出对比"
+	,
+		id: 66
+		name: "人均月消费笔数对比"
+	,
+		id: 67
+		name: "客户性别占比情况分析"
 	]
 	release: ->
 		@view.release() if @view
-		$("footer nav").html require("views/footer")(collection: @categories)
+
 	constructor: ->
 		@routes
 			"": ->
@@ -77,6 +215,10 @@ class App extends Spine.Controller
 				@release()
 				ChartDetail = require("controllers/chart#{params.id}")
 				@view = new ChartDetail()
+			"chart/:id/clean": (params) ->
+				@release()
+				ChartDetail = require("controllers/chart#{params.id}")
+				@view = new ChartDetail(clean: true)
 $ ->
 	Highcharts.setOptions
 		lang:
@@ -86,9 +228,7 @@ $ ->
 			downloadPDF: "下载 pdf 文档"
 			downloadPNG: "下载 png 图片"
 			downloadSVG: "下载 svg 矢量图片"
-	new App()
+	app = new App()
 	Spine.Route.setup()
-	# $('footer').affix
-	# 	offset:
-	# 		top: 100
-	# 		bottom: 10
+	$("header .container").append require("views/footer")(collection: app.categories)
+

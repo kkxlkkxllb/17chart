@@ -6,6 +6,6 @@ module.exports = class Chart14 extends ChartBase
 		h_label: '消费次数'
 		v_ser: [34473,36843,68153,3962,1543,695,378,186,108,63,175]
 		v_label: '消费人数'
-		max: 6000
-		labelColor: '#EA5514'
-		colors: ["#FF9016","#EA5514"]
+		# max: 6000
+		labelColor: '#5CB539'
+		colors: ["#5CB539","#5CB539"]

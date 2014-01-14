@@ -40,7 +40,7 @@ class Chart4 extends ChartBase
 						x: 15
 						y: -2
 						style:
-							fontSize: '16px'
+							fontSize: '14px'
 			xAxis:
 				categories: data.h_ser
 				lineColor: "#888"

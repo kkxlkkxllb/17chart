@@ -47,6 +47,8 @@ class Chart2 extends ChartBase
 						enabled: true
 						color: '#333'
 						connectorColor: '#666'
+						style:
+							fontSize: '14px'
 						format: '<b>{point.name}</b>: {point.percentage:.1f} %'
 			series: [
 				type: 'pie'
