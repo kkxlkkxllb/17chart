@@ -7,5 +7,6 @@ class Chart43 extends ChartBase
 		v_ser: [633.9,661.9,640.9,604.9,711,616.3,632.1]
 		v_label: '日均客单价（元/人）'
 		color: "#036EB8"
+		width: 700
 
 module.exports = Chart43

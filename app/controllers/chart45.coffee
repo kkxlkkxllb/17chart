@@ -28,7 +28,7 @@ class Chart44 extends ChartBase
 			chart:
 				type: 'column'
 				marginTop: 40
-				width: 1000
+				width: 700
 			title:
 				text: ' '
 			tooltip:

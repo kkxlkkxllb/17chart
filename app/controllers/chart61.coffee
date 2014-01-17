@@ -1,11 +1,12 @@
 ChartBase = require("controllers/chart_base")
-# 各行业消费总额占比分析
+# 沉默客户中外地客户来源占比分析
 # pie chart children: [10]
 class Chart61 extends ChartBase
 	opts:
 		category: ['邛崃市','德阳市','南充市','西安市','绵阳市','广州市','上海市','深圳市','重庆市','北京市','其他']
 		percent: [1.17,1.19,1.19,1.33,1.70,1.98,3.13,4.22,4.76,10.92,29.01]
 		h_label: '城市'
+		title_label: '沉默客户中外地客户来源占比分析'
 		v_label: '来源占比'
 		colors: ["#E60012","#EA5514","#F49C22","#F5B222","#FDD000","#F4E02C","#F5E842","#F2F197","#CEE294","#A9D06A","#97C72F"]
 	render: ->
@@ -34,13 +35,12 @@ class Chart61 extends ChartBase
 			exporting:
 				enabled: true
 			title:
-				text: ''
+				text: data.title_label
 				x: -100
 				y: 50
 			tooltip:
 				enabled: false
 			legend:
-		        enabled: false
 		        layout: 'vertical'
 		        borderWidth: 0
 		        align: 'right'
@@ -63,7 +63,7 @@ class Chart61 extends ChartBase
 					showInLegend: true
 					dataLabels:
 						softConnector: false
-						enabled: true
+						enabled: false
 						color: '#333'
 						fontSize: '12px'
 						connectorColor: '#666'

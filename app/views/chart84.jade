@@ -1,0 +1,26 @@
+#c84_wrap.row
+	#chart1.col-md-6
+	#chart2.col-md-6
+p
+	span.btn.btn-primary.export export
+#form
+	form.row(action="#" method="post" role="form")
+		.col-lg-6
+			.input-group
+				span.input-group-addon 类目
+				input.form-control(type="text" name="h_ser" required="required")
+			.input-group
+				span.input-group-addon 纵坐标1
+				input.form-control(type="text" name="v_ser1" required="required")
+			.input-group
+				span.input-group-addon 纵坐标2
+				input.form-control(type="text" name="v_ser2" required="required")
+		.col-lg-6
+			.input-group
+				span.input-group-addon 纵坐标1标签
+				input.form-control(type="text" name="v_label1" value=c1_label)
+			.input-group
+				span.input-group-addon 纵坐标2标签
+				input.form-control(type="text" name="v_label2" value=c2_label)
+			.input-group
+				input.btn.btn-primary(type="submit")

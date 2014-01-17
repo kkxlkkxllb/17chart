@@ -81,6 +81,7 @@ module.exports = class Chart48 extends Spine.Controller
 						style:
 							fontSize: '15px'
 						distance: 42
+						connectorPadding: 30
 						#connectorWidth: 0
 						format: '<b>{point.name}</b>: {point.percentage:.2f} %'
 			series: [

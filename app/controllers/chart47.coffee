@@ -82,6 +82,7 @@ module.exports = class Chart47 extends Spine.Controller
 							fontSize: '15px'
 						distance: 42
 						#connectorWidth: 0
+						connectorPadding: 30
 						format: '<b>{point.name}</b>: {point.percentage:.2f} %'
 			series: [
 				type: 'pie'

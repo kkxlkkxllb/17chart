@@ -19,6 +19,7 @@ class Chart3 extends ChartBase
 			chart:
 				type: 'area'
 				marginTop: 40
+				width: data.width || null
 			credits:
 				enabled: false
 			title:
@@ -71,7 +72,7 @@ class Chart3 extends ChartBase
 					fillColor: data.fillColor
 					dataLabels:
 						enabled: true
-						color: data.color
+						# color: data.color
 						y: -15
 						formatter: ->
 							if data.percent
@@ -79,10 +80,10 @@ class Chart3 extends ChartBase
 							else
 								this.y
 						style:
-							fontSize: '14px'
+							fontSize: '13px'
 					marker:
 						lineWidth: 2
-						radius: 8
+						radius: data.radius || 8
 						fillColor: data.color
 			series: [
 				data: data.v_ser

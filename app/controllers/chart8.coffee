@@ -14,7 +14,7 @@ class Chart8 extends ChartBase
 				enabled: false
 			chart:
 				marginTop: 40
-				# width: 800
+				width: data.width || 700
 			title:
 				text: " "
 			tooltip:

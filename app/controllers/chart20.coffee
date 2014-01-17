@@ -27,7 +27,6 @@ class Chart20 extends ChartBase
 			chart:
 				type: 'column'
 				marginTop: 40
-				# width: 1000
 			title:
 				text: ' '
 			tooltip:

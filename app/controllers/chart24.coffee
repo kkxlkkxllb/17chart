@@ -6,9 +6,10 @@ class Chart24 extends ChartBase
 		h_label: '月份'
 		v_ser1: [99.79,100.53,99.80,97.99,119.34,115.55]
 		v_ser2: [3.81,3.99,3.69,3.97,4.23,4.29]
-		v_label: '每月交易量（万笔）'
 		c1_label: '行业月刷卡量（万笔）'
 		c2_label: '商户月刷卡量（万笔）'
+		line_color: "#EBAC28"
+		line_label: "行业占比"
 		colors: ["#7B7A7B","#EBAC28"]
 		type: 'logarithmic'
 		custom: true
@@ -32,7 +33,7 @@ class Chart24 extends ChartBase
 		lineData = []
 		for item,i in data.v_ser2
 			lineData[i] = Math.round(item*2e7/data.v_ser1[i])
-		console.log lineData
+		# console.log lineData
 		params =
 			colors: data.colors
 			credits:
@@ -46,10 +47,6 @@ class Chart24 extends ChartBase
 				enabled: false
 			legend:
 				enabled: true
-				# align: 'right'
-				# verticalAlign: 'top'
-				# floating: true
-				# x: -60
 				itemMarginTop: 30
 				borderWidth: 0
 				layout:'vertical'
@@ -68,18 +65,21 @@ class Chart24 extends ChartBase
 					text: data.h_label
 					align: "high"
 			yAxis:	[
-				labels: 
+				labels:
 					enabled: false
 				opposite: true
 				offset: 0
-				minPadding: 3
+				#minPadding: data.line_minPadding || 5
+				#maxPadding: data.line_maxPadding || 0.4
+				minPadding: data.line_minPadding || 7
+				maxPadding: data.line_maxPadding || 0.2
 				gridLineWidth: 0
 				title:
 					enabled: false
 			,
 				gridLineDashStyle: 'longdash'
 				type: data.type || null
-				maxPadding: 0.02
+				maxPadding: data.column_maxPadding || 0.8
 				gridLineColor: "#ddd"
 				lineColor: "#888"
 				lineWidth: 2
@@ -91,7 +91,6 @@ class Chart24 extends ChartBase
 					offset: 0
 				labels:
 					enabled: false
-				maxPadding: 1
 			]
 			plotOptions:
 				line:
@@ -101,7 +100,7 @@ class Chart24 extends ChartBase
 						style:
 							fontSize: '14px'
 						formatter: ->
-							Math.round(this.y/2e4)/10 + "%"
+							Math.round(this.y/2e3)/100 + "%"
 				column:
 					groupPadding: 0.1
 					dataLabels:
@@ -109,19 +108,14 @@ class Chart24 extends ChartBase
 						y: -15
 						style:
 							fontSize: '14px'
-					#borderRadiusTopLeft: 30
-					#borderRadiusTopRight: 30
-					#borderRadius: 10
-					#arrowTop: true
 			series: [
-				name: "行业占比"
-				color: "#EBAC28"
+				name: data.line_label
+				color: data.line_color
 				data: lineData
 				marker:
 					lineWidth: 2
 					fillColor: 'white'
-					lineColor: "#EBAC28"
-				
+					lineColor: data.line_color
 			,
 				name: data.c1_label
 				type: 'column'
@@ -149,10 +143,6 @@ class Chart24 extends ChartBase
 				enabled: false
 			legend:
 				enabled: true
-				# align: 'right'
-				# verticalAlign: 'top'
-				# floating: true
-				# x: -60
 				borderWidth: 0
 				layout:'vertical'
 				align: 'right'
@@ -188,11 +178,14 @@ class Chart24 extends ChartBase
 						y: -15
 						style:
 							fontSize: '12px'
-					#borderRadiusTopLeft: 30
-					#borderRadiusTopRight: 30
-					#borderRadius: 10
-					#arrowTop: true
 			series: [
+				name: data.line_label
+				color: data.line_color
+				marker:
+					lineWidth: 2
+					fillColor: 'white'
+					lineColor: data.line_color
+			,
 				name: data.c1_label
 				data: data.v_ser1
 			,

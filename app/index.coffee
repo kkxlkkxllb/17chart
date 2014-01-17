@@ -76,16 +76,16 @@ class App extends Spine.Controller
 		name: "月刷卡对比分析"
 	,
 		id: 25
-		name: "每月交易额分析"	
+		name: "每月交易额分析"
 	,
 		id: 26
 		name: "每月交易量分析"
 	,
 		id: 27
-		name: "每周交易量分析"	
+		name: "每周交易量分析"
 	,
 		id: 28
-		name: "周均客单价波动分析"	
+		name: "周均客单价波动分析"
 	,
 		id: 29
 		name: "日均交易金额分析"
@@ -124,7 +124,7 @@ class App extends Spine.Controller
 		name: "银行卡总量对比分析"
 	,
 		id: 42
-		name: "当月百货行业消费总额对比分析"        
+		name: "当月百货行业消费总额对比分析"
 	,
 		id: 43
 		name: "日均客单价波动分析"
@@ -191,7 +191,7 @@ class App extends Spine.Controller
 	,
 		id: 64
 		name: "新、老客户月刷卡量对比分析"
-	,	
+	,
 		id: 65
 		name: "人均月支出对比"
 	,
@@ -200,6 +200,57 @@ class App extends Spine.Controller
 	,
 		id: 67
 		name: "客户性别占比情况分析"
+	,
+		id: 68
+		name: "城市月刷卡金额按区间分布"
+	,
+		id: 69
+		name: "所在行业与全城消费金额对比"
+	,
+		id: 70
+		name: "商圈内月刷卡频次按不同区间分布"
+	,
+		id: 71
+		name: "商圈内消费金额分析"
+	,
+		id: 72
+		name: "商圈内刷卡金额对比分析"
+	,
+		id: 73
+		name: "商圈内消费群体年龄分布"
+	,
+		id: 74
+		name: "消费人数分析"
+	,
+		id: 75
+		name: "客户年龄分布"
+	,
+		id: 76
+		name: "商户月刷卡量在商圈占比分析"
+	,
+		id: 77
+		name: "客户月消费能力分析"
+	,
+		id: 78
+		name: "有车人士人数统计分析"
+	,
+		id: 79
+		name: "客户在其他地区同行业消费分析"
+	,
+		id: 80
+		name: "各时点交易金额分析"
+	,
+		id: 81
+		name: "各类目商品每日消费金额统计"
+	,
+		id: 82
+		name: "各类目商品每日消费次数统计"
+	,
+		id: 83
+		name: "各类目商品每日客单价统计"
+	,
+		id: 84
+		name: "各类目消费性别分析"
 	]
 	release: ->
 		@view.release() if @view
@@ -219,6 +270,11 @@ class App extends Spine.Controller
 				@release()
 				ChartDetail = require("controllers/chart#{params.id}")
 				@view = new ChartDetail(clean: true)
+			"json": (params) ->
+				for cat,i in @categories
+					# @release()
+					ChartDetail = require("controllers/chart#{cat.id}")
+					@view = new ChartDetail(clean: true,id: i + 1)
 $ ->
 	Highcharts.setOptions
 		lang:

@@ -9,7 +9,7 @@ module.exports = class Chart35 extends Spine.Controller
 		v_ser2: [37.3]
 		colors: ['#507205','#B5C600']
 		c1_label: '本地客户占比'
-		c2_label: '非本地客户占比'
+		c2_label: '外地客户占比'
 	constructor: ->
 		super
 		$("article").html @render()
@@ -17,6 +17,7 @@ module.exports = class Chart35 extends Spine.Controller
 	initChart: (data) ->
 		for i in [1]
 			$('#chart' + i).highcharts @getOptions(i,data)
+			# console.log JSON.stringify(@getOptions(i,data))
 
 	render: ->
 		@html require("views/chart33")(@opts)
@@ -54,9 +55,9 @@ module.exports = class Chart35 extends Spine.Controller
 			exporting:
  				url: "http://192.168.88.110:8080/export/"
 			title:
-				text: data.month[i - 1] 
+				text: data.month[i - 1]
 				verticalAlign: "top"
-				y: 90
+				y: 45
 				useHTML: true
 				style:
 					fontSize: "22px"
@@ -75,10 +76,11 @@ module.exports = class Chart35 extends Spine.Controller
 						enabled: true
 						color: '#333'
 						connectorColor: '#666'
-						#format: ':'				
+						#format: ':'
 						distance: 42
 						style:
 							fontSize: '15px'
+						connectorPadding: 30
 						#connectorWidth: 0
 						format: '<b>{point.name}</b>: {point.percentage:.1f} %'
 			series: [

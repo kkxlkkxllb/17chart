@@ -34,7 +34,7 @@ class Chart37 extends ChartBase
 			exporting:
 				enabled: true
 			title:
-				text: '<span style="font-size: 20px">非本地老客户来源分别情况</span>'
+				text: '<span style="font-size: 15px">外地老客户来源分布情况</span>'
 				x: -100
 				y: 50
 			tooltip:

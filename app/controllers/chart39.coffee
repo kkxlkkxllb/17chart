@@ -28,7 +28,7 @@ class Chart39 extends ChartBase
 		for item,i in data.h_ser
 			data.datas[i] =
 				data: [[item,data.v_ser[i],1]]
-				dataLabels: 
+				dataLabels:
 					enabled: true
 					color: "#000"
 					format: data.z_ser[i]
@@ -37,7 +37,7 @@ class Chart39 extends ChartBase
 					style:
 						textShadow: '0px 0px 0px black'
 						fontSize: '13px'
-		console.log data.datas
+		# console.log data.datas
 		data
 	getOptions: (data) ->
 		data = @formatData(data)
@@ -59,29 +59,36 @@ class Chart39 extends ChartBase
 			plotOptions:
 				bubble:
 					color: "#ef4136"
-					minSize: 18
-					maxSize: 18
+					minSize: 12
+					maxSize: 12
 			xAxis:
 				labels:
 					enabled: true
 				lineColor: "#888"
 				lineWidth: 2
+				gridLineDashStyle: 'longdash'
+				gridLineColor: "#C9CACA"
+				gridLineWidth: 0.5
 				title:
 					text: data.h_label
 					align: "high"
 					y: -10
 			yAxis:
+				maxPadding: 0.2
+				maxPadding: 0.2
 				title:
 					text: data.v_label
 					align: "high"
 					rotation: 0
-					y: -15
+					y: 5
+				gridLineDashStyle: 'longdash'
+				gridLineColor: "#C9CACA"
+				gridLineWidth: 0.5
 				lineColor: "#888"
 				lineWidth: 2
 				labels:
 					enabled: true
-				gridLineWidth: 0
-			series: 
+			series:
 				data.datas
 
 module.exports = Chart39

@@ -7,10 +7,11 @@ class Chart32 extends ChartBase
 		v_ser1: [962,978,1105]
 		v_ser2: [1120,1146,1134]
 		v_label: '每月客单价（元/笔）'
-		c1_label: '新客户客单价'
-		c2_label: '老客户客单价'
+		c1_label: '新客户'
+		c2_label: '老客户'
 		colors: ["#FDD000","#ADCF32"]
-		# pointWidth: 40
-		groupPadding: 0.3
+		groupPadding: 0.23
+		chartHeight: 600
+		chartWidth: 800
 
 module.exports = Chart32

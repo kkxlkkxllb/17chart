@@ -1,6 +1,6 @@
 {
   "server": {
-    "port"  : 9297
+    "port"  : 9294
   },
 
   "routes": [

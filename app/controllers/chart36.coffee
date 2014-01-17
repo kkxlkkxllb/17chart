@@ -35,7 +35,7 @@ class Chart36 extends ChartBase
 			exporting:
 				enabled: true
 			title:
-				text: '<span style="font-size: 15px">非本地新客户来源分别情况</span>'
+				text: '<span style="font-size: 15px">外地新客户来源分布情况</span>'
 				x: -100
 				y: 50
 			tooltip:

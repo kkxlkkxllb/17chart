@@ -53,8 +53,10 @@ class Chart4 extends ChartBase
 					y: -15
 					offset: 0
 			yAxis:
+				type: 'logarithmic'
 				max: data.max || null
-				maxPadding: 0.25
+				#maxPadding: 0.25
+				maxPadding: 0.4
 				gridLineWidth: 0
 				title:
 					text: data.v_label

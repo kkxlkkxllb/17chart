@@ -1,0 +1,63 @@
+$(function () {
+    $('#container').highcharts({
+    
+        chart: {
+            type: 'bar',
+            marginTop: 50,
+            marginBottom: 50,
+            marginLeft: 50,
+            marginRight: 50
+        },
+    
+        xAxis: [{
+            gridLineWidth: 0,
+            tickInterval: 1,
+            lineWidth: 0,
+            offset: -150,
+            categories: ['北京','上海','大连','青岛']
+        },
+        {
+            gridLineWidth: 0,
+            opposite: true,
+            labels: {
+                enabled: false
+            },
+            min: -5,
+            max: 5,
+            tickInterval: 1,
+            lineWidth: 0,
+            lineColor: 'black',
+            offset: -150
+        }
+        ],
+        yAxis: {
+            gridLineWidth: 0,
+            min: -5,
+            max: 5,
+            labels: {
+                enabled: false
+            },
+            tickInterval: 1,
+            lineWidth: 0,
+            lineColor: 'black',
+            offset: -150,
+            title: {
+                text: null
+            }
+        },
+    
+        series: [{
+            data: [
+                [-3, 3],
+                [-2, 2],
+                [-1, 1],
+                [0, 0],
+                [1, 1],
+                [2, 2],
+                [3, 3]
+                
+            ]
+        }]
+    
+    });
+});

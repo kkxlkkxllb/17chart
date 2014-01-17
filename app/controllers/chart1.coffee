@@ -7,6 +7,7 @@ class Chart1 extends ChartBase
 		v_ser: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
 		v_label: '刷卡金额(亿元)'
 		groupPadding: 0.1
+		colors: ["#DE2A23"]
 	render: ->
 		@html require("views/chart1")(@opts)
 	formatData: (data) ->
@@ -28,7 +29,6 @@ class Chart1 extends ChartBase
 			chart:
 				type: 'column'
 				marginTop: 40
-				width: 1000
 			title:
 				text: ' '
 			tooltip:
@@ -46,6 +46,7 @@ class Chart1 extends ChartBase
 					align: "high"
 					# offset: 0
 			yAxis:
+				type: data.yAxisType || null
 				maxPadding: 0.2
 				gridLineDashStyle: 'longdash'
 				gridLineColor: "#ddd"
@@ -64,14 +65,14 @@ class Chart1 extends ChartBase
 					# borderRadiusTopLeft: 30
 					# borderRadiusTopRight: 30
 					# arrowTop: true
-					# pointPadding: -0.3
-					groupPadding: data.groupPadding || 0.2
 					# borderWidth: 0
-					color: "#DE2A23"
+					groupPadding: data.groupPadding || 0.2
+					pointPadding: 0.3
+					color: data.colors[0]
 					dataLabels:
 						enabled: true
 						y: -15
-						color: '#DE2A23'
+						color: data.colors[0]
 						style:
 							fontSize: '14px'
 			series: [

@@ -70,7 +70,7 @@ module.exports = class Chart16 extends Spine.Controller
 		params =
 			colors: data.colors
 			chart:
-				width: 200
+				width: 300
 				borderRadius: 0
 			credits:
 				enabled: false
@@ -79,7 +79,7 @@ module.exports = class Chart16 extends Spine.Controller
 			title:
 				text: data.month[i - 1] + "<br>" + percent + "%"
 				verticalAlign: "bottom"
-				y: -20
+				y: -45
 				useHTML: true
 				style:
 					fontSize: "18px"
@@ -100,7 +100,6 @@ module.exports = class Chart16 extends Spine.Controller
 						color: '#333'
 						connectorColor: '#666'
 						connectorWidth: 0
-						# format: '{point.percentage:.1f} %'
 						format: '{point.y}'
 			series: [
 				type: 'pie'

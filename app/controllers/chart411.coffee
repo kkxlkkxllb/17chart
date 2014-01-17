@@ -28,7 +28,7 @@ class Chart411 extends ChartBase
 			chart:
 				type: 'column'
 				marginTop: 40
-				width: 1200
+				width: 900
 			title:
 				text: ' '
 			tooltip:
@@ -38,13 +38,13 @@ class Chart411 extends ChartBase
 				# align: 'right'
 				# verticalAlign: 'top'
 				# floating: true
-				# x: -60
+				x: 350
 				itemMarginTop: 30
 				borderWidth: 0
 				layout:'vertical'
-				align: 'right'
+				align: 'center'
 				verticalAlign: 'top'
-				y: 80
+				y: 0
 				itemStyle:
 					fontSize: '14px'
 			xAxis:
@@ -60,8 +60,6 @@ class Chart411 extends ChartBase
 					enabled: false
 			yAxis:
 				maxPadding: 0.2
-				gridLineDashStyle: 'longdash'
-				gridLineColor: "#ddd"
 				lineColor: "#888"
 				lineWidth: 2
 				title:
@@ -73,6 +71,7 @@ class Chart411 extends ChartBase
 					enabled:false
 				labels:
 					enabled: false
+				gridLineWidth: 0
 			plotOptions:
 				column:
 					# borderRadius: 10
@@ -86,8 +85,10 @@ class Chart411 extends ChartBase
 					color: "#EA5514"
 					dataLabels:
 						enabled: true
-						y: -15
-						color: '#EA5514'
+						y: -20
+						x: 10
+						color: '#888'
+						rotation: 315
 						style:
 							fontSize: '14px'
 			series: [

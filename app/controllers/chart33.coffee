@@ -6,6 +6,7 @@ class Chart33 extends ChartBase
 		h_label: '月份'
 		v_ser: [{color: '#EBAA00', y: 10310}, {color:"#EA5514", y:11916}, {color:"#E60012", y: 13788}]
 		v_label: '刷卡量(笔)'
+		type: 'logarithmic'
 	getOptions: (data) ->
 		data = $.extend {},@opts,data
 		# convert
@@ -41,7 +42,8 @@ class Chart33 extends ChartBase
 			yAxis:
 				# min: 0
 				# gridLineDashStyle: 'longdash'
-				maxPadding: 0.1
+				minPadding: 0.2
+				maxPadding: 0.2
 				gridLineWidth: 0
 				lineColor: "#888"
 				lineWidth: 3
@@ -49,11 +51,12 @@ class Chart33 extends ChartBase
 					text: data.v_label
 					align: "high"
 					rotation: 0
-					y: 0
+					y: 5
 					offset: 5
 					enabled:true
 				labels:
 					enabled: false
+				type: data.type || 'logarithmic'
 
 			plotOptions:
 				series:

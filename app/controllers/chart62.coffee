@@ -1,5 +1,5 @@
 ChartBase = require("controllers/chart_base")
-# 各行业消费总额占比分析
+# 流失客户中外的客户来源占比
 # pie chart children: [10]
 class Chart62 extends ChartBase
 	opts:
@@ -7,6 +7,7 @@ class Chart62 extends ChartBase
 		percent: [1.11,1.16,1.22,1.23,1.68,2.03,3.36,4.07,5.07,10.52,28.77]
 		h_label: '城市'
 		v_label: '来源占比'
+		title_label: '流失客户中外的客户来源占比'
 		colors: ["#E60012","#EA5514","#F49C22","#F5B222","#FDD000","#F4E02C","#F5E842","#F2F197","#CEE294","#A9D06A","#97C72F"]
 	render: ->
 		@html require("views/chart36")(@opts)
@@ -34,13 +35,13 @@ class Chart62 extends ChartBase
 			exporting:
 				enabled: true
 			title:
-				text: ''
+				text: data.title_label
 				x: -100
 				y: 50
 			tooltip:
 				enabled: false
 			legend:
-		        enabled: false
+		        enabled: true
 		        layout: 'vertical'
 		        borderWidth: 0
 		        align: 'right'
@@ -63,7 +64,7 @@ class Chart62 extends ChartBase
 					showInLegend: true
 					dataLabels:
 						softConnector: false
-						enabled: true
+						enabled: false
 						color: '#333'
 						fontSize: '12px'
 						connectorColor: '#666'

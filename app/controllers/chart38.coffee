@@ -7,6 +7,8 @@ class Chart38 extends ChartBase
 		v_ser: [8463.5,8315.3,8354.8,8474,9235.1,8812.2]
 		v_label: '卡均消费金额（元/卡）'
 		groupPadding: 0.1
+		column_color: "#DE2A23"
+		char_color: "#DE2A23"
 	render: ->
 		@html require("views/chart1")(@opts)
 	formatData: (data) ->
@@ -68,11 +70,11 @@ class Chart38 extends ChartBase
 					groupPadding: data.groupPadding || 0.2
 					# borderWidth: 0
 					pointPadding:0.3
-					color: "#DE2A23"
+					color: data.column_color
 					dataLabels:
 						enabled: true
 						y: -15
-						color: '#DE2A23'
+						color: data.char_color
 						style:
 							fontSize: '14px'
 			series: [

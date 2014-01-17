@@ -7,7 +7,7 @@ module.exports = class Chart67 extends Spine.Controller
 		month: ['']
 		v_ser1: [26.29]
 		v_ser2: [73.71]
-		colors: ['#00A0E9','#ADCF32']
+		colors: ['#ADCF32','#00A0E9']
 		c1_label: '男性'
 		c2_label: '女性'
 	constructor: ->
@@ -76,6 +76,7 @@ module.exports = class Chart67 extends Spine.Controller
 					innerSize: '30%'
 					dataLabels:
 						softConnector: false
+						connectorPadding: 30
 						enabled: true
 						color: '#333'
 						connectorColor: '#666'

@@ -10,7 +10,8 @@ class Chart63 extends ChartBase
 		c1_label: '新客户'
 		c2_label: '老客户'
 		colors: ["#FDD000","#ADCF32"]
-		# pointWidth: 40
-		groupPadding: 0.3
+		groupPadding: 0.23
+		chartHeight : 600
+		chartWidth : 700
 
 module.exports = Chart63

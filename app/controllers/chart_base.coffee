@@ -16,6 +16,10 @@ class ChartBase extends Spine.Controller
 		options = $.extend({}, @getOptions(data), @commonSettings())
 		$('#chart').highcharts options
 		console.log JSON.stringify(@getOptions(data))
+		# data =
+		# 	id: @id
+		# 	json: JSON.stringify(@getOptions(data))
+		# $.post "http://192.168.88.164:3000/charts/gen",data
 	submit: (e) ->
 		e.preventDefault()
 		$form = $(e.currentTarget)

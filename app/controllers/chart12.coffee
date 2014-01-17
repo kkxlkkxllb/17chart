@@ -7,4 +7,4 @@ module.exports = class Chart12 extends ChartBase
 		v_ser2: [106009,111068,115431]
 		c1_label: '老客户人数（人）'
 		c2_label: '新客户人数（人）'
-		colors: ['#FDD000','#ADCF32']
+		colors: ['#ADCF32','#FDD000']
