@@ -15,7 +15,7 @@ class ChartBase extends Spine.Controller
 	initChart: (data) ->
 		options = $.extend({}, @getOptions(data), @commonSettings())
 		$('#chart').highcharts options
-		console.log JSON.stringify(@getOptions(data))
+		# console.log JSON.stringify(@getOptions(data))
 		# data =
 		# 	id: @id
 		# 	json: JSON.stringify(@getOptions(data))

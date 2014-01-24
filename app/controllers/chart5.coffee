@@ -57,6 +57,7 @@ class Chart5 extends ChartBase
 				align: 'right'
 				itemStyle:
 					fontSize: '14px'
+					fontFamily: "Adobe Heiti Std"
 				verticalAlign: 'top'
 				y: 100
 			xAxis:
@@ -103,6 +104,8 @@ class Chart5 extends ChartBase
 						y: -15
 						style:
 							fontSize: '14px'
+							fontFamily: "Adobe Heiti Std"
+						# format: "{point.y:.2f}%"
 						formatter: ->
 							Math.round(this.y/2e3)/100 + "%"
 				column:
@@ -113,6 +116,7 @@ class Chart5 extends ChartBase
 						y: -15
 						style:
 							fontSize: '14px'
+							fontFamily: "Adobe Heiti Std"
 					#borderRadiusTopLeft: 30
 					#borderRadiusTopRight: 30
 					#borderRadius: 10
@@ -176,15 +180,15 @@ class Chart5 extends ChartBase
 					enabled: false
 				opposite: true
 				offset: 0
-				minPadding: data.line_minPadding || 11
-				maxPadding: data.line_maxPadding || 0.2
+				# minPadding: data.line_minPadding || 11
+				# maxPadding: data.line_maxPadding || 0.2
 				gridLineWidth: 0
 				title:
 					enabled: false
 			,
 				gridLineDashStyle: 'longdash'
 				type: data.type || null
-				maxPadding: data.maxPadding || 0.8
+				maxPadding: data.maxPadding || 0.2
 				gridLineColor: "#ddd"
 				lineColor: "#888"
 				lineWidth: 2

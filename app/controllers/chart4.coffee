@@ -5,7 +5,7 @@ class Chart4 extends ChartBase
 	opts:
 		h_ser: ["5以下", "5-10", "10-15", "15-20", "20-25", "25-30", "30-35", "35-40", "40-45", "45-50", "50以上"]
 		h_label: '金额区间（万元）'
-		v_ser: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6]
+		v_ser: [0, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6]
 		v_label: '刷卡次数'
 		labelColor: '#DE2A23'
 		colors: ["#DE2A23","#9B1F23"]
@@ -53,7 +53,7 @@ class Chart4 extends ChartBase
 					y: -15
 					offset: 0
 			yAxis:
-				type: 'logarithmic'
+				# type: 'logarithmic'
 				max: data.max || null
 				#maxPadding: 0.25
 				maxPadding: 0.4

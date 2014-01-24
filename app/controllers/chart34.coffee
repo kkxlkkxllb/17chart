@@ -17,7 +17,7 @@ module.exports = class Chart34 extends Spine.Controller
 	initChart: (data) ->
 		for i in [1]
 			$('#chart' + i).highcharts @getOptions(i,data)
-			# console.log JSON.stringify(@getOptions(i,data))
+			console.log JSON.stringify(@getOptions(i,data))
 
 	render: ->
 		@html require("views/chart33")(@opts)
