@@ -1,12 +1,15 @@
+@font-face{font-family:hei;font-style:normal;src:url("./fonts/hei.otf")}
 article{margin-top:50px;margin-bottom:150px}
 #chart_categories{padding:20px 0;}
 #chart_categories .panel-body{height:400px;position:relative;overflow:hidden;}
 #chart_categories .panel-body a{display:block;}
 #chart_categories .panel-body a img{width:100%}
+ul.dropdown-menu{overflow-y:scroll;height:600px}
 #chart{margin-top:50px}
 #form{padding:40px;}
 #form .input-group{margin-bottom:10px}
-#c16_wrap{width:630px;margin:0 auto}
+#c16_wrap{width:900px;margin:0 auto}
+#c84_wrap{width:800px;margin:0 auto}
 
 /*!
  * Bootstrap v3.0.2 by @fat and @mdo
